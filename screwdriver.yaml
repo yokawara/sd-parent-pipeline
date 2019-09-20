@@ -1,0 +1,11 @@
+childPipelines:
+  scmUrls:
+    - git@github.com:yokawara/sd-child-pipeline.git
+    - git@github.com:yokawara/sd-child-pipeline.git#staging
+
+jobs:
+  main:
+    image: node:10
+    requires: [ ~pr, ~commit ]
+    steps:
+      - echo: echo "hello screwdriver.cd !"
